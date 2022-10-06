@@ -4,7 +4,7 @@ class EmployeeService {
   baseUrl = "http://localhost:8080/employeepayrollservice";
 
   createEmployee(data) {
-    console.log(data);
+    // console.log(data);
     return axios.post(`${this.baseUrl}/createEmployee`,data);
   }
   findAllEmployee() {

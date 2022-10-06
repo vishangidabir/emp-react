@@ -26,7 +26,7 @@ function EmployeeForm() {
     const params = useParams();
     useEffect(() => {
         console.log(params.id)
-        getEmployeeId(params.id)
+        // getEmployeeId(params.id)
 
     }, [params.id]);
     const getEmployeeId = (employeeId) => {
