@@ -61,6 +61,7 @@ class Home extends Component {
                                 <tr>
                                     <th>Profile Image</th>
                                     <th>Name</th>
+                                    <th>Notes</th>
                                     <th>Gender</th>
                                     <th>Department</th>
                                     <th>Salary</th>
@@ -78,6 +79,7 @@ class Home extends Component {
                                                     employee.profilePic === "../../assets/profile-images/Ellipse -8.png" ? profile3 : profile4
                                             } alt="ProfilePic" srcset="" /></td>
                                         <td>{employee.name}</td>
+                                        <td>{employee.notes}</td>
                                         <td>{employee.gender}</td>
                                         <td>
                                             {employee.department.map(dep => <div className="dept-label" id="dept"> {dep} </div>)}
