@@ -89,6 +89,7 @@ function EmployeeForm() {
             startDate: `${formValue.year}-${formValue.month}-${formValue.day}`,
             notes: formValue.notes
         };
+        console.log(employeeObject);
         if (formValue.isUpdate) {
             EmployeeService.updateEmployee(params.id, employeeObject)
                 .then((data) => {
@@ -102,8 +103,8 @@ function EmployeeForm() {
         } else {
             console.log(employeeObject);
             EmployeeService
-                .createEmployee(employeeObject).then((response) => {
-                    console.log(response);
+                .createEmployee(employeeObject).then((response) => (error) => {
+                    console.log(response.data.data); 
                     alert("Data Added!!", response)
                 })
         }
@@ -136,26 +137,26 @@ function EmployeeForm() {
                         <error-output class="text-error" htmlFor="name"></error-output>
                     </div>
                     <div className="row-content">
-                        <label lassName="label text" htmlFor="profile">Profile image</label>
+                        <label lassName="label text" htmlFor="profilePic">Profile image</label>
                         <div lassName="profile-radio-content">
                             <label>
-                                <input type="radio" id="profile1" name="profile" checked={formValue.profile === '../assets/profile-images/Ellipse -3.png'}
-                                value="../assets/profile-images/Ellipse -3.png" onChange={onNameChange} />                                 
+                                <input type="radio" id="profile1" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -3.png'}
+                                value="../../assets/profile-images/Ellipse -3.png" onChange={onNameChange} />                                 
                                 <img className="profile" id="image1" src={profile1} alt=""/>
                             </label>
                             <label>
-                                <input type="radio" id="profile2" name="profile" checked={formValue.profile === '../assets/profile-images/Ellipse -1.png'}
-                                value="../assets/profile-images/Ellipse -1.png" onChange={onNameChange} />                       
+                                <input type="radio" id="profile2" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -1.png'}
+                                value="../../assets/profile-images/Ellipse -1.png" onChange={onNameChange} />                       
                                 <img class="profile" id="image2" src={profile2} alt=""/>
                             </label>
                             <label>
-                                <input type="radio" id="profil3" name="profile" checked={formValue.profile === '../assets/profile-images/Ellipse -8.png'}
-                                value="../assets/profile-images/Ellipse -8.png" onChange={onNameChange} />
+                                <input type="radio" id="profil3" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -8.png'}
+                                value="../../assets/profile-images/Ellipse -8.png" onChange={onNameChange} />
                                 <img class="profile" id="image3" src={profile3} alt=""/>                                    
                             </label>
                             <label>
-                                <input type="radio" id="profile4" name="profile" checked={formValue.profile === '../assets/profile-images/Ellipse -7.png'}
-                                value="../assets/profile-images/Ellipse -7.png" onChange={onNameChange} />
+                                <input type="radio" id="profile4" name="profilePic" checked={formValue.profilePic === '../../assets/profile-images/Ellipse -7.png'}
+                                value="../../assets/profile-images/Ellipse -7.png" onChange={onNameChange} />
                                 <img class="profile" id="image4" src={profile4} alt=""/>                                   
                             </label>
                         </div>
@@ -225,18 +226,18 @@ function EmployeeForm() {
                                 <option value="31">31</option>
                             </select>
                             <select name="month" id="month"  value={formValue.month} onChange={onNameChange}>
-                                <option value="Jan">January</option>
-                                <option value="Feb">Febuary</option>
-                                <option value="Mar">March</option>
-                                <option value="Apr">April</option>
-                                <option value="May">May</option>
-                                <option value="Jun">June</option>
-                                <option value="Jul">July</option>
-                                <option value="Aug">August</option>
-                                <option value="Sep">September</option>
-                                <option value="Oct">October</option>
-                                <option value="Nov">November</option>
-                                <option value="Dec">December</option>
+                                <option value="01">January</option>
+                                <option value="02">Febuary</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
                             </select>
                             <select name="year" id="year"  value={formValue.year} onChange={onNameChange}>
                                 <option value="2020">2020</option>
